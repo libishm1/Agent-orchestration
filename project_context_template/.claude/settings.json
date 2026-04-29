@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(**)",
+      "Grep(**)",
+      "Glob(**)",
+      "Write(wiki/**)",
+      "Write(outputs/**)",
+      "Edit(wiki/**)",
+      "Edit(outputs/**)",
+      "Write(.claude/**)",
+      "Edit(.claude/**)",
+      "Bash(git status)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(ls:*)",
+      "Bash(tree:*)",
+      "Bash(pytest:*)",
+      "Bash(python -m pytest:*)",
+      "Bash(ros2 control list_controllers)",
+      "Bash(ros2 topic list)",
+      "Bash(ros2 node list)"
+    ],
+    "deny": [
+      "Edit(raw/**)",
+      "Write(raw/**)",
+      "Bash(rm:*)",
+      "Bash(git push:*)",
+      "Bash(git commit -a:*)",
+      "Bash(pip install:*)",
+      "Bash(npm install:*)",
+      "Bash(curl:*)",
+      "Bash(wget:*)"
+    ]
+  }
+}
