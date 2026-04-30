@@ -13,6 +13,8 @@ Review the Level 1 WebSocket pose pipeline for correctness, API compatibility, a
 
 The relay, browser receiver, sample sender, Rhino 8 sender, roslibpy stub, wiki pages, and checkpoint files are present. `smoke_test.py` passed locally with installed `websockets` 11.0.3.
 
+2026-04-30 API refresh: Context7 resolved `websockets` to `/python-websockets/websockets`; the cached notes now target version 16.0. The relay handler uses the current one-argument `handler(websocket)` pattern while retaining the import fallback for the local 11.0.3 environment.
+
 ## Files to inspect
 
 - `outputs/2026-04-29/grasshopper_websocket_pose_pipeline/server.py`
@@ -26,7 +28,7 @@ The relay, browser receiver, sample sender, Rhino 8 sender, roslibpy stub, wiki 
 
 - Level 1 only.
 - No hardware.
-- Context7 unavailable in the Codex session; official-doc fallback was used.
+- Original 2026-04-29 build used official-doc fallback because Context7 was unavailable. Context7 was available for the 2026-04-30 `websockets` API refresh.
 
 ## Review questions
 

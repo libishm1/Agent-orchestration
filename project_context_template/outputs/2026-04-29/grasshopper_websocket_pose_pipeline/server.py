@@ -143,7 +143,7 @@ class PoseHub:
         self.clients: set[Any] = set()
         self.latest_pose: dict[str, Any] | None = None
 
-    async def handler(self, websocket: Any, path: str | None = None) -> None:
+    async def handler(self, websocket: Any) -> None:
         self.clients.add(websocket)
         remote = getattr(websocket, "remote_address", None)
         await self._send(

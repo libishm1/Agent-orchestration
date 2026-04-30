@@ -14,11 +14,19 @@ Terms used across the wiki. Define on first use in any page; cross-link here.
 - **ROS2** — Second-generation Robot Operating System. Default distros for this project: Humble Hawksbill (Ubuntu 22.04) and Jazzy Jalisco (Ubuntu 24.04).
 - **MoveIt2** — Motion planning framework for ROS2. Provides IK, planning, collision checking, trajectory execution.
 - **`ur_robot_driver`** — Official ROS2 driver for UR e-series. Repository: `Universal_Robots_ROS2_Driver`.
+- **Universal_Robots_ROS2_Driver** — Official Universal Robots ROS2 driver repository. Includes `ur_robot_driver`, `ur_controllers`, `ur_calibration`, `ur_dashboard_msgs`, and `ur_moveit_config`.
 - **`ur_rtde`** — Python/C++ library by SDU Robotics for direct UR control via the RTDE interface. Independent of ROS2.
+- **OnRobot ROS2 gripper candidates** — Community repositories for RG2/RG6 ROS2 integration, currently `ABC-iRobotics/onrobot-ros2` and `runtimerobotics/onrobot_rg2_ros2`. Evaluate and pin before using in lab motion workflows.
+- **RG6 gripper description** — Community RG6 URDF/Xacro reference from `Zhengxuez/rg6_gripper_description`. Useful for visualization/modeling only after adapter, origin, and TCP offsets are verified.
 - **Grasshopper** — Visual scripting environment inside Rhino. Two Python runtimes: legacy GHPython (IronPython 2.7) and ScriptEditor (CPython 3, Rhino 8+).
 
 ## Graph Machine Learning
 
+- **Point cloud** — A set of 3D points, usually with coordinates and optional attributes such as color, intensity, normals, classification, or timestamp.
+- **Registration** — Alignment of two or more 3D datasets into a shared coordinate frame. Often coarse alignment followed by ICP-style refinement.
+- **ICP** — Iterative Closest Point, a fine-registration method that refines alignment by iteratively matching nearby geometry.
+- **RANSAC** — Robust model-fitting method often used to detect planes or other primitives in noisy point clouds.
+- **Voxelization** — Conversion of 3D space into a regular grid of volumetric cells.
 - **DGL** — Deep Graph Library. Graph neural network framework. Last major release: late 2024. Considered mature; see `graphml_baseline_comparison/dgl_pipeline.md`.
 - **PyG (PyTorch Geometric)** — Dominant 2026 GNN framework. Default for new pipelines in this project.
 - **GNN** — Graph Neural Network. Generic term covering GCN, GAT, GraphSAGE, GIN, and variants.
@@ -27,6 +35,7 @@ Terms used across the wiki. Define on first use in any page; cross-link here.
 - **Edge feature** — Per-edge attribute vector. Optional input depending on model.
 - **Graph construction** — The procedure that turns raw data (e.g. an IFC building model) into a graph. Defined per dataset; documented in `graphml_baseline_comparison/dataset_notes.md`.
 - **Bridge to GNN (Categories A–D)** — Inclusion framework for the project's PRISMA review on GraphML in AEC.
+- **TopologicPy MCP** — Candidate MCP server from `Adventurous-Systems/topologicpy_MCP` that exposes TopologicPy spatial modeling, topology query, graph, and IFC/BREP/OBJ tools to MCP clients.
 
 ## Local AI Workflow
 

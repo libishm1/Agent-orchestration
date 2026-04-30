@@ -34,12 +34,18 @@ If you are starting a session, run `/session_start` (Claude Code) or paste the s
 - [Metrics](graphml_baseline_comparison/metrics.md)
 - [Open questions](graphml_baseline_comparison/open_questions.md)
 
+## 3D reconstruction knowledge
+
+- [3D reconstruction knowledge base](3d_reconstruction/3d_reconstruction_knowledge_base.md)
+- [3D Data Science chapter index](3d_reconstruction/chapter_index.md)
+
 ## Local AI workflow
 
 - [Overview](local_ai_workflow/overview.md)
 - [Codex setup](local_ai_workflow/codex_setup.md)
 - [Claude Code setup](local_ai_workflow/claude_code_setup.md)
 - [Context7 usage](local_ai_workflow/context7_usage.md) — allowed library list lives here
+- [TopologicPy MCP](local_ai_workflow/topologicpy_mcp.md)
 - [Local models](local_ai_workflow/local_models.md)
 - [Offline workflow](local_ai_workflow/offline_workflow.md)
 - [Agent mode matrix](local_ai_workflow/agent_mode_matrix.md)

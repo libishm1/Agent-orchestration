@@ -6,9 +6,10 @@ Define the Level 1 software pipeline for sending a UR10e with RG6 gripper target
 
 ## Confirmed facts
 
-- `websockets` 16.0 is the current PyPI release as of 2026-04-29, released on 2026-01-10, and requires Python 3.10 or newer. Source: https://pypi.org/project/websockets/
-- The current `websockets` documentation places the new asyncio server API under `websockets.asyncio.server.serve`; older environments may still use `websockets.serve`. Source: https://websockets.readthedocs.io/en/stable/howto/upgrade.html
-- The documented WebSocket server pattern is an async handler iterating over incoming messages and sending responses with `websocket.send(...)`. Source: https://websockets.readthedocs.io/en/stable/intro/tutorial1.html
+- `websockets` 16.0 is the current API version checked through Context7 on 2026-04-30. Context7 library ID used: `/python-websockets/websockets/16.0`.
+- The current `websockets` asyncio server API lives under `websockets.asyncio.server.serve`; top-level `websockets.serve()` aliases the new implementation since version 14.0. Source: https://websockets.readthedocs.io/en/stable/howto/upgrade.html
+- The documented WebSocket server pattern is `async def handler(websocket)`, not `handler(websocket, path)`. Use `websocket.request.path` when path access is needed. Source: https://websockets.readthedocs.io/en/stable/reference/asyncio/server.html
+- The relay artifact keeps an import fallback because the current local Python environment has `websockets` 11.0.3 installed; new pinned environments should use `websockets.asyncio.*` directly.
 - Bengesht provides Grasshopper WebSocket components: `WS*` starts a client connection, `WS<<` sends text, and `WS>>` receives text. Source: https://grasshopperdocs.com/addons/bengesht.html and https://www.food4rhino.com/en/app/bengesht
 - RhinoCommon `Rhino.Geometry.Plane` represents an origin and axes in 3D and exposes origin and axis properties. Source: https://developer.rhino3d.com/api/rhinocommon/rhino.geometry.plane
 - `roslibpy` connects to ROS through rosbridge over WebSockets and provides topic publish/subscribe, services, parameters, TF client, and actions. PyPI current version checked: 2.0.0, released 2025-10-08. Source: https://pypi.org/project/roslibpy/
@@ -76,9 +77,9 @@ Grasshopper options:
 
 Context7 status:
 
-- Context7 is not available in this Codex session.
-- Per `CONTEXT7_SETUP.md`, official documentation fallback was used.
-- Do not fill Context7 cached IDs until an actual Context7 `resolve-library-id` call succeeds.
+- Context7 was available in this Codex session on 2026-04-30.
+- `websockets` resolved to `/python-websockets/websockets`; versioned query used `/python-websockets/websockets/16.0`.
+- Cached notes were updated in `wiki/local_ai_workflow/websockets_notes.md`.
 
 ## Code or command patterns
 
@@ -140,4 +141,4 @@ python .\smoke_test.py
 
 ## Last updated
 
-2026-04-29
+2026-04-30

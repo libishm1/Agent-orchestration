@@ -9,6 +9,8 @@ High-level map of the UR10e + RG6 + ROS2 + Grasshopper integration. New contribu
 - Robot: UR10e with RG6 gripper. Specs in [glossary](../glossary.md) and [pose_frame_rules](pose_frame_rules.md).
 - Software stack: ROS2 (Humble or Jazzy), `ur_robot_driver`, `ur_rtde`, MoveIt2, Grasshopper/Rhino 8.
 - Two equally valid bridge paths: ROS2 path (`ur_robot_driver` + topic/service bridge) and direct path (`ur_rtde` over RTDE socket).
+- UR arm ROS2 reference: official `UniversalRobots/Universal_Robots_ROS2_Driver`.
+- RG6 ROS2/community references to evaluate: `ABC-iRobotics/onrobot-ros2`, `runtimerobotics/onrobot_rg2_ros2`, and `Zhengxuez/rg6_gripper_description`.
 - Current Level 1 test artifact: `outputs/2026-04-29/grasshopper_websocket_pose_pipeline/`. It sends a Grasshopper-style pose over WebSocket and receives it in a browser. No robot or ROS motion command is issued.
 
 ## Current working assumptions
@@ -30,7 +32,7 @@ See linked pages.
 ## Risks
 
 - Frame confusion. See [pose_frame_rules](pose_frame_rules.md) Risks section.
-- Stale URCap or driver versions. See [ros2_bridge](ros2_bridge.md).
+- Stale URCap, UR driver, or community gripper package versions. See [ros2_bridge](ros2_bridge.md) and [reference_digest](reference_digest.md).
 
 ## Open questions
 
@@ -53,4 +55,4 @@ See [open_questions](open_questions.md).
 
 ## Last updated
 
-2026-04-29
+2026-04-30

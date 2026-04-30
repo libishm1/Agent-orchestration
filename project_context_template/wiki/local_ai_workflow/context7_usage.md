@@ -18,14 +18,16 @@ The assistant may query Context7 for any of these libraries. Update this table w
 
 | Library | Domain | Cached ID | Last verified |
 |---|---|---|---|
-| ROS2 (rclpy) | Robotics | (resolve on first use) | |
+| ROS2 Humble docs | Robotics | /websites/ros_en_humble | 2026-04-30 |
 | ros2_control | Robotics | (resolve on first use) | |
 | MoveIt2 | Robotics | (resolve on first use) | |
 | ur_robot_driver | Robotics | (resolve on first use) | |
+| universal_robots_ros2_description | Robotics | /universalrobots/universal_robots_ros2_description | 2026-04-30 |
 | ur_rtde | Robotics | (resolve on first use) | |
 | FastAPI | Web | (resolve on first use) | |
 | Flask | Web | (resolve on first use) | |
-| WebSocket APIs (websockets, aiohttp) | Web | /pypi/websockets | 2026-04-30 |
+| websockets (Python) | Web | /python-websockets/websockets/16.0 | 2026-04-30 |
+| aiohttp WebSockets | Web | (resolve on first use) | |
 | React | Web | (resolve on first use) | |
 | Three.js | 3D web | (resolve on first use) | |
 | urdf-loader | 3D web | (resolve on first use) | |
@@ -39,6 +41,7 @@ The assistant may query Context7 for any of these libraries. Update this table w
 | Ollama | LLM runtime | (resolve on first use) | |
 | Claude Code | Tooling | (resolve on first use) | |
 | Codex CLI | Tooling | (resolve on first use) | |
+| Paper2Code | Research tooling | /going-doer/paper2code | 2026-04-30 |
 
 ## Resolution workflow
 
@@ -71,6 +74,8 @@ After Context7 returns a useful answer:
 | Date | Library/source | Reason | Result |
 |---|---|---|---|
 | 2026-04-29 | `websockets`, `roslibpy`, RhinoCommon, Bengesht, Webots URe | Context7 MCP was not available in the Codex session. | Official docs and source URLs were checked and summarized in `wiki/ur10e_ros2_grasshopper/reference_digest.md`. Cached Context7 IDs were not filled because no `resolve-library-id` call was available. |
+| 2026-04-30 | `websockets` | Context7 MCP available. | Resolved to `/python-websockets/websockets`; queried version `16.0`; cached notes updated in `wiki/local_ai_workflow/websockets_notes.md`. |
+| 2026-04-30 | ROS2 Humble docs, `universal_robots_ros2_description`, Paper2Code | User provided preferred Context7 URLs. | Cached IDs recorded for future use: `/websites/ros_en_humble`, `/universalrobots/universal_robots_ros2_description`, and `/going-doer/paper2code`. |
 
 ## When NOT to use Context7
 
@@ -103,4 +108,4 @@ For these, read the wiki.
 
 ## Last updated
 
-2026-04-29
+2026-04-30
