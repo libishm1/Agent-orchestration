@@ -1,14 +1,10 @@
 # Local Extraction Notice
 
-This file appears to be a full local PDF-to-markdown extraction of Florent Poux's *3D Data Science with Python*. Keep it as a private local source/reference file. Do not use it as the primary wiki knowledge page and do not copy large portions into prompts, reports, or generated files.
+Keep it as a private local source/reference file. Do not use it as the primary wiki knowledge page and do not copy large portions into prompts, reports, or generated files.
 
 Use the curated project notes instead: [3d_reconstruction_knowledge_base.md](3d_reconstruction_knowledge_base.md).
 
 ---
-
- PDF To Markdown Converter
-Debug View
-Result View
 3D Data Science with Python
 Florent Poux
 
@@ -905,38 +901,6 @@ Python by Florent Poux (O’Reilly). Copyright 2025 Florent Poux, 978-1-098-1613
 If you feel your use of code examples falls outside fair use or the permission given
 above, feel free to contact us at permissions@oreilly.com.
 
-Preface | xxv
-O’Reilly Online Learning
-For more than 40 years, O’Reilly Media has provided technol‐
-ogy and business training, knowledge, and insight to help
-companies succeed.
-Our unique network of experts and innovators share their knowledge and expertise
-
-through books, articles, and our online learning platform. O’Reilly’s online learning
-platform gives you on-demand access to live training courses, in-depth learning
-
-paths, interactive coding environments, and a vast collection of text and video from
-O’Reilly and 200+ other publishers. For more information, visit https://oreilly.com.
-
-How to Contact Us
-Please address comments and questions concerning this book to the publisher:
-
-O’Reilly Media, Inc.
-1005 Gravenstein Highway North
-Sebastopol, CA 95472
-800-889-8969 (in the United States or Canada)
-707-827-7019 (international or local)
-707-829-0104 (fax)
-support@oreilly.com
-https://oreilly.com/about/contact.html
-We have a web page for this book, where we list errata, examples, and any additional
-information. You can access this page at https://oreil.ly/3d-data-science.
-
-For news and information about our books and courses, visit https://oreilly.com.
-
-Find us on LinkedIn: https://linkedin.com/company/oreilly-media.
-
-Watch us on YouTube: https://youtube.com/oreillymedia.
 
 xxvi | Preface
 
@@ -2777,7 +2741,7 @@ myself to providing you with free resources. I included three mediums to best su
 your learning affinity: books, videos, and articles. Again, these are my recommenda‐
 
 tions to complement the knowledge of this book at no additional cost but know that
-there are lovely resources outside of these, for example, within the O’Reilly collection
+there are lovely resources outside of these,
 
 (Essential Math for AI and Essential Math for Data Science).
 
@@ -28527,8 +28491,6 @@ hollow fangs which they use to inject venom into their prey. These snakes are po
 
 ous to humans, but there are antidotes.
 
-Many of the animals on O’Reilly covers are endangered; all of them are important to
-the world.
 
 The cover illustration is by José Marzan Jr., based on a black-and-white engraving
 from Lydekker’s Royal Natural History. The series design is by Edie Freedman, Ellie
@@ -28541,14 +28503,3 @@ Condensed; and the code font is Dalton Maag’s Ubuntu Mono.
 Learn from experts.
 
 Become one yourself.
-
-60,000+ titles | Live events with experts | Role-based courses
-
-Interactive learning | Certification preparation
-
-Try the O’Reilly learning platform free for 10 days.
-
-©2025 O’Reilly Media, Inc. O’Reilly is a registered trademark of O’Reilly Media, Inc. 718900_7x9.1875
-
-This is a offline tool, your data stays locally and is not send to any server!
-Feedback & Bug Reports

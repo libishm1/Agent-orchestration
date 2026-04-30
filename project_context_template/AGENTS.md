@@ -203,6 +203,7 @@ Codex and Qwen Code should use explicit role routing. When the user asks to use 
 4. GraphML reviewer: check graph construction, baseline fairness, metrics, and reproducibility.
 5. Wiki health checker: find contradictions, stale pages, and missing links.
 6. Local-model coordinator: create checkpointed local-model execution plans.
+7. Academic writer: verify research claims, structure scholarly arguments, ensure reproducibility, check academic integrity.
 
 Offline rule: when using Qwen Code locally, run these as sequential prompts, not parallel agents, unless the installed Qwen Code version supports subagents directly.
 
@@ -455,6 +456,39 @@ Hard rules:
 Framework note: DGL has had no major release since late 2024. PyG is the dominant 2026 framework for GraphML in AEC. New experiments default to PyG unless an existing DGL pipeline is being maintained.
 
 See also: `wiki/graphml_baseline_comparison/`.
+
+## When working on academic writing
+
+These rules apply whenever the task involves thesis chapters, research papers, journal submissions, conference abstracts, technical reports, or scholarly documentation.
+
+Hard rules:
+- Separate supported claims from speculative claims. Always cite sources.
+- Never invent citations, references, or file paths. If unsure, mark as "[citation needed]".
+- Claims in academic writing must be sourced from `wiki/`, project verification, peer-reviewed publications, or Context7-verified APIs.
+- Distinguish: **established fact** (peer-reviewed, published, or project-verified), **working assumption** (tested locally but not generalized), **speculative** (hypothetical, needs validation).
+- Link each scholarly claim to supporting evidence in `raw/` or `wiki/`.
+- Avoid informal language, marketing language, and unsupported generalizations like "novel", "state-of-the-art", or "optimal".
+
+Research verification:
+- Identify contested claims before writing.
+- Check `wiki/` for project precedent and related knowledge.
+- Check `raw/` for primary evidence (papers, data, notes).
+- Use Context7 for current API documentation, methodologies, and library specs.
+- Flag unverified claims with "[verify: <source>]" markers.
+
+Reproducibility:
+- Methods and parameters must be explicit.
+- Code versions, dataset versions, hardware specifications must be recorded.
+- Random seeds and split strategies must be fixed.
+- Test commands and environment setup must be repeatable.
+
+Academic integrity:
+- Acknowledge prior work honestly. Use `wiki/` to track what related projects have done.
+- If work overlaps with published work, note it explicitly and distinguish your novel contributions.
+- If methods or code are adapted, acknowledge the source.
+- Declare funding, conflicts of interest, or institutional affiliation if relevant.
+
+See also: `.claude/agents/academic-writer.md`, academic writing style guide (verify location in `wiki/index.md`).
 
 ## Editing rules
 

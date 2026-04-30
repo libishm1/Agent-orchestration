@@ -21,6 +21,7 @@ Specialist subagents live in `.claude/agents/`. Each has a `description` that tr
 | `repo-archaeologist` | Inspecting unfamiliar repos before edits | sonnet |
 | `robotics-reviewer` | UR10e, RG6, ROS2, URScript, IK/FK code review | sonnet |
 | `api-doc-checker` | Verifying current API usage (uses Context7) | sonnet |
+| `academic-writer` | Academic writing, thesis drafting, research claims, scholarly argumentation | sonnet |
 
 The parent thread should delegate aggressively. Subagents have their own context windows. Keeping work out of the parent thread is the main reason to use them.
 
