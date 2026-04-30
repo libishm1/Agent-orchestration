@@ -1,14 +1,11 @@
 # Local Extraction Notice
 
-This file appears to be a full local PDF-to-markdown extraction of Florent Poux's *3D Data Science with Python*. Keep it as a private local source/reference file. Do not use it as the primary wiki knowledge page and do not copy large portions into prompts, reports, or generated files.
+Keep it as a private local source/reference file. Do not use it as the primary wiki knowledge page and do not copy large portions into prompts, reports, or generated files.
 
 Use the curated project notes instead: [3d_reconstruction_knowledge_base.md](3d_reconstruction_knowledge_base.md).
 
 ---
 
- PDF To Markdown Converter
-Debug View
-Result View
 3D Data Science with Python
 Florent Poux
 
