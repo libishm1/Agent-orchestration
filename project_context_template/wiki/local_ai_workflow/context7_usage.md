@@ -25,7 +25,7 @@ The assistant may query Context7 for any of these libraries. Update this table w
 | ur_rtde | Robotics | (resolve on first use) | |
 | FastAPI | Web | (resolve on first use) | |
 | Flask | Web | (resolve on first use) | |
-| WebSocket APIs (websockets, aiohttp) | Web | (resolve on first use) | |
+| WebSocket APIs (websockets, aiohttp) | Web | /pypi/websockets | 2026-04-30 |
 | React | Web | (resolve on first use) | |
 | Three.js | 3D web | (resolve on first use) | |
 | urdf-loader | 3D web | (resolve on first use) | |

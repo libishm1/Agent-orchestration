@@ -22,7 +22,35 @@ Verify inside Claude Code:
 
 ## Codex
 
-Add to `C:\Users\<you>\.codex\config.toml`:
+### No-admin setup, preferred on Windows
+
+If Node.js / `npx` is not installed, use Codex's streamable HTTP MCP support. This does not require admin rights, Node, npm, or npx.
+
+```powershell
+codex mcp add context7 --url https://mcp.context7.com/mcp
+codex mcp login context7
+codex mcp list
+```
+
+Expected result:
+
+```text
+Name      Url                           Status   Auth
+context7  https://mcp.context7.com/mcp  enabled  OAuth
+```
+
+This writes the user-level config:
+
+```toml
+[mcp_servers.context7]
+url = "https://mcp.context7.com/mcp"
+```
+
+Verified on Windows without admin permissions: 2026-04-30.
+
+### Local stdio setup with npx
+
+If Node.js / `npx` is already available, add this to `C:\Users\<you>\.codex\config.toml`:
 
 ```toml
 [mcp_servers.context7]
