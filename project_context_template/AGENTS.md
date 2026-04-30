@@ -3,7 +3,7 @@
 This file is the single source of truth for assistant behavior in this repository.
 Codex CLI reads this file. Claude Code reads `CLAUDE.md`, which imports this file via `@AGENTS.md`.
 
-Last updated: 2026-04-29
+Last updated: 2026-04-30
 
 ## Role
 
@@ -23,9 +23,15 @@ Your job is to manage project context through a curated wiki, not through uncont
 - Codex and Qwen Code use this file as the main project contract. Use explicit subagent or role prompts when the tool supports them.
 - Context7 supplies current external API documentation, not project memory.
 
+## Human verification layer
+
+Agents may propose, draft, inspect, summarize, patch, and verify. Humans approve scope, files to edit, dependency installation, robot motion logic, physical fabrication decisions, durable wiki memory, git commits or pushes, and claims used in academic writing.
+
+No agent output becomes project truth until it is verified and promoted into `wiki/`. Human verification should reduce scope, not add ceremony. Use the checklist for medium, long, or high-risk tasks. For small tasks, one compact approval instruction is enough.
+
 ## Agent mode interoperability
 
-Claude Code, Codex, and local Qwen are interchangeable at the **workflow layer**, not at the **tooling layer**.
+Claude Code, Codex, Gemini, and local Qwen are interchangeable at the **workflow layer**, not at the **tooling layer**.
 
 Use the same repository contract everywhere:
 
@@ -42,6 +48,7 @@ Model/tool differences:
 |---|---|---|
 | Claude Code with cloud Claude | high-autonomy code work, subagents, hard reasoning | subject to Claude usage limits |
 | Codex with cloud GPT | second opinion, patch generation, PR-style code work | different tool behavior than Claude Code |
+| Gemini cloud | long-context reading, repo summarization, contradiction scans, documentation drafting | not final authority for safety, dependency, git, or robot decisions |
 | Claude Code with local Qwen via LM Studio | offline continuity, wiki queries, small edits, code review | local endpoint may not honor cloud subagent models |
 | Codex with local Qwen via LM Studio/Ollama | fallback OpenAI-compatible local workflow | may need stricter prompts and smaller tasks |
 
@@ -160,6 +167,20 @@ Use when the task spans multiple sessions, agents, or offline continuation.
 Never read all raw files unless the user explicitly asks for ingestion.
 Never read all wiki files.
 Never run health checks at the start of a small task.
+
+## Prompt specificity rule
+
+Every non-trivial task should specify:
+
+- agent mode: Claude cloud, Codex cloud, Gemini cloud, Qwen local, or another named mode
+- task size: small, medium, or long
+- allowed files to read
+- allowed files to edit
+- forbidden actions
+- output target: chat only, `outputs/YYYY-MM-DD/`, or `wiki/` after approval
+- verification method: diff, test command, checklist, human approval, Context7 check, or manual verification
+
+The prompt should narrow context before work starts. Do not force full wiki/session workflows for small tasks. Do not run health checks unless the task asks for wiki maintenance or long-task review. Do not read all `raw/` or all `wiki/` unless the user explicitly asks for ingestion or audit.
 
 ## Primary domains
 
@@ -445,6 +466,42 @@ Before editing code:
 4. Show the diff.
 5. Run the smallest available test.
 6. Save a patch summary in `outputs/YYYY-MM-DD/`.
+
+## Task completion verification
+
+For every non-trivial coding task, define success before editing. A task is complete only when the agent can show evidence that the expected outcome was achieved.
+
+The verification contract includes:
+
+1. Goal: what should be true after the task.
+2. Expected change: which behavior, file, function, command, or output should change.
+3. Verification method: test, type check, lint, compile check, script run, diff inspection, output-file check, manual checklist, or human approval.
+4. Evidence: command output, test result, diff summary, generated file path, before/after behavior, or resolved error.
+5. Stop condition: when the agent should stop instead of continuing.
+
+Agents must not claim completion without verification evidence. If verification cannot be run, say so and provide exact manual verification steps.
+
+### Verification levels
+
+- V0: Diff-only verification. Use for documentation or tiny edits.
+- V1: Static verification. Use for syntax-sensitive changes. Evidence: lint, type check, import check, or compile check.
+- V2: Runtime verification. Use for behavior changes. Evidence: unit test, script run, CLI output, generated file, or before/after result.
+- V3: Human-in-loop verification. Use for robotics, fabrication, academic claims, or safety-critical decisions. Evidence: agent output plus human approval.
+
+Recommended minimums:
+
+- README edit: V0.
+- Python syntax fix: V1.
+- ROS2 node change: V1 or V2.
+- Grasshopper Python code: V1 if possible, otherwise V3 manual verification.
+- URScript waypoint generation: V2 plus V3.
+- Robot motion logic: V3 only, no execution.
+- GraphML experiment script: V2.
+- Wiki memory promotion: V3.
+
+### Tool call verification
+
+For every meaningful tool call, check the result against the task goal. Track the tool called, input summary, expected result, actual result, status (`passed`, `failed`, `partial`, or `not verifiable`), and next action. If the result is partial or ambiguous, do not treat the task as complete.
 
 ## Writing style
 

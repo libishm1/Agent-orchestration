@@ -1,6 +1,6 @@
 # Wiki Index
 
-Last updated: 2026-04-29
+Last updated: 2026-04-30
 
 ## How to use this index
 
@@ -52,6 +52,7 @@ If you are starting a session, run `/session_start` (Claude Code) or paste the s
 - [Risks](project_management/risks.md)
 - [Tasks](project_management/tasks.md)
 - [Prompts](project_management/prompts.md)
+- [Human verification checklist](project_management/human_verification_checklist.md)
 
 ## Health status
 

@@ -37,6 +37,7 @@ Agent rules live in:
 ```text
 AGENTS.md   = shared rules for Codex, Claude Code, Qwen Code, and other agents
 CLAUDE.md   = thin Claude Code wrapper that imports AGENTS.md
+GEMINI.md   = thin Gemini wrapper that points to AGENTS.md
 ```
 
 External API compliance is handled through Context7 where available.
@@ -65,6 +66,46 @@ It is designed for robotics, Graph Machine Learning, computational design, and l
 * Not safe for robot execution without human validation.
 * Not a system for running physical robot motion commands automatically.
 
+## How This Compares To Agent Frameworks
+
+This repo is not a full orchestrator. It does not schedule agents, manage state graphs, run sandboxed autonomous tasks, or replace coding agents.
+
+Use LangGraph, CrewAI, AutoGen, or similar frameworks when you need programmable multi-agent execution. Use Cline, Roo Code, Continue, Qwen Code, Claude Code, Codex, or Gemini when you need actual coding-agent execution.
+
+Use this repo when you need the layer between those tools: shared project memory, human verification, explicit context routing, task verification, and online/offline handoff continuity.
+
+Intended stack:
+
+```text
+Claude Code = deep planning and review
+Codex = cloud patch worker
+Gemini = long-context scout and summarizer
+Qwen Code = offline local execution
+Roo/Cline/Continue = optional VS Code local-model execution
+This repo = memory, prompts, handoffs, checkpoints, and verification contracts
+```
+
+## Human Verification
+
+Agents may propose, draft, inspect, summarize, patch, and verify. Humans approve task scope, files to edit, dependency installation, robot motion logic, physical fabrication decisions, durable wiki memory, git commits or pushes, and academic claims.
+
+No agent output becomes project truth until it is verified and promoted into `wiki/`. Human verification should reduce scope, not add ceremony. For small tasks, one compact approval instruction is enough. For medium, long, or high-risk tasks, use the short checklist in `wiki/project_management/human_verification_checklist.md`.
+
+## Task Completion Verification
+
+For every non-trivial coding task, define success before editing. A task is complete only when there is evidence that the expected outcome was achieved.
+
+Verification levels:
+
+```text
+V0 = diff-only verification for documentation or tiny edits
+V1 = static verification such as compile, lint, type, import, or syntax check
+V2 = runtime verification such as tests, script output, CLI output, or generated files
+V3 = human-in-loop verification for robotics, fabrication, academic claims, or safety decisions
+```
+
+If verification cannot be run, the agent must say so and provide exact manual verification steps.
+
 ## Why This Exists
 
 Cloud models are strong, but limits expire.
@@ -76,6 +117,7 @@ This template creates a shared workflow so that:
 ```text
 Claude Code can plan.
 Codex can patch.
+Gemini can summarize long context.
 Qwen can continue offline.
 Cloud models can review later.
 The wiki keeps stable memory.
@@ -93,6 +135,8 @@ The system is useful when working across:
 * robotics workflows where frame, unit, and pose mistakes matter
 
 ## Project Structure
+
+The repo root includes `README.md`, `GEMINI.md`, and the project scaffold folder:
 
 ```text
 project_context_template/
@@ -248,6 +292,25 @@ SETUP_PROMPTS.md
 
 Codex routing in this template is prompt-driven. Use explicit prompts when you want subagent-style decomposition.
 
+### Gemini
+
+Best for:
+
+* long-context inspection
+* repo summarization
+* wiki draft generation
+* contradiction scanning
+* handoff compression
+
+Gemini uses:
+
+```text
+GEMINI.md
+project_context_template/AGENTS.md
+```
+
+Gemini should summarize and propose. It is not final authority for robot safety, dependency installation, git push, destructive commands, or academic claims.
+
 ### Local Qwen
 
 Best for:
@@ -355,6 +418,7 @@ Update wiki only after durable knowledge is confirmed.
 |---|---|---|---|
 | High-level planning | Claude Code cloud | architecture, reasoning, risky decisions | wiki + selected outputs |
 | Patch implementation | Codex cloud | code changes, PR-style tasks | AGENTS.md + target files |
+| Long-context scouting | Gemini cloud | large-file reading, summarization, contradiction scans | selected files + wiki |
 | Offline execution | Qwen Code local | travel, outages, focused edits | PLAN + checkpoints |
 | API compliance | Context7-assisted agent | current docs | Context7 + wiki notes |
 | Review | Claude or Codex cloud | verify Qwen output | checkpoints + diff |
@@ -669,6 +733,6 @@ Recommended license for reuse: MIT or Apache-2.0. Check individual subdirectorie
 
 ---
 
-Last updated: 2026-04-29
+Last updated: 2026-04-30
 Repository: https://github.com/libishm1/Agent-orchestration
 Status: Experimental workflow scaffold

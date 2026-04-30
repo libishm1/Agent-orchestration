@@ -3,6 +3,140 @@
 These prompts are for first-time setup and for Codex (which does not have slash commands).
 Claude Code users can use the slash commands in `.claude/commands/` instead.
 
+## Specific task template
+
+```text
+Read AGENTS.md first.
+
+Agent mode:
+Task size:
+Task:
+Allowed to read:
+Allowed to edit:
+Do not:
+Use:
+Verification:
+Definition of Done:
+Stop conditions:
+```
+
+## Verification contract template
+
+```text
+Task:
+Definition of Done:
+Expected change:
+Allowed verification:
+Completion evidence required:
+Stop if:
+```
+
+## Small task prompt
+
+```text
+Read AGENTS.md.
+Read only: <target-file>.
+Task: <task>.
+
+Do not read the whole wiki.
+Do not update wiki.
+Do not create checkpoints.
+Edit only the approved file.
+Show the diff and the test command, or state why no test applies.
+```
+
+## Before editing prompt
+
+```text
+Read AGENTS.md.
+Before editing, produce an edit proposal only.
+
+Include:
+1. task interpretation
+2. files to read
+3. files to edit
+4. expected output
+5. risks
+6. verification contract
+7. test command or manual verification method
+8. what needs human approval
+
+Do not edit yet.
+```
+
+## Proceed after approval prompt
+
+```text
+Read AGENTS.md.
+Proceed with the approved edit.
+
+Rules:
+- edit only approved files
+- do not install packages
+- do not edit raw/
+- do not git push
+- do not run robot motion commands
+- save a patch summary to outputs/YYYY-MM-DD/ only if useful
+- show the diff
+- run the agreed verification if safe
+- state whether the Definition of Done was met
+```
+
+## Review local Qwen checkpoint prompt
+
+```text
+Read AGENTS.md.
+Read the relevant PLAN.md.
+Read the relevant CHECKPOINT_N.md.
+Read git diff.
+
+Verify:
+1. scope
+2. file safety
+3. assumptions
+4. whether the checkpoint met its Definition of Done
+5. whether cloud review is needed
+
+Do not edit yet.
+```
+
+## Promote memory to wiki prompt
+
+```text
+Read AGENTS.md.
+Propose a wiki promotion.
+
+Include:
+1. target wiki path
+2. confirmed facts
+3. assumptions
+4. unresolved questions
+5. evidence source
+
+Do not write until human approval.
+```
+
+## Verification behavior prompt
+
+```text
+Read AGENTS.md.
+
+Before coding, write a verification contract:
+1. goal
+2. expected change
+3. files likely affected
+4. verification method
+5. evidence required to claim completion
+6. stop conditions
+
+After editing:
+1. run the agreed verification method if safe
+2. show command output or explain why it could not be run
+3. summarize the diff
+4. state whether the Definition of Done was met
+5. do not claim completion without evidence
+```
+
 ## First-time setup (Codex)
 
 ```text

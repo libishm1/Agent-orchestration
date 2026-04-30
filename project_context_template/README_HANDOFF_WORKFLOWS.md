@@ -22,12 +22,15 @@ CLAUDE.md  imports AGENTS.md and adds Claude Code rules
 |---|---|---|
 | Claude Code cloud | hard planning, multi-file reasoning, robotics risk review | wasting limits on mechanical ingestion |
 | Codex cloud | implementation, PR-style changes, second opinion, tests | unbounded repo exploration without a plan |
+| Gemini cloud | long-context reading, repo summarization, contradiction scanning, documentation drafting | being final authority for safety, dependency, git, or robot decisions |
 | Qwen Code local | offline edits, checkpoint execution, wiki queries, focused patching | whole-repo autonomous refactors |
 | LM Studio chat | emergency fallback, explanation, small snippets | complex tool-heavy work |
 
 ## Golden rule
 
-Every non-trivial task must create or use these files:
+Use the lightest workflow that can safely complete the task. Small tasks do not need handoffs, checkpoints, or wiki updates.
+
+Use the full handoff bundle only for long tasks, agent switching, offline continuation, or high-risk work:
 
 ```text
 outputs/YYYY-MM-DD/TASK_PLAN.md
@@ -36,6 +39,20 @@ outputs/YYYY-MM-DD/HANDOFF_TO_QWEN.md
 outputs/YYYY-MM-DD/HANDOFF_TO_CLOUD.md
 outputs/YYYY-MM-DD/PATCH_SUMMARY.md
 ```
+
+For medium tasks, one output summary is usually enough. For small tasks, a diff and verification note are enough.
+
+## Verification contract
+
+Before non-trivial coding work, define:
+
+1. Goal.
+2. Expected change.
+3. Verification method.
+4. Evidence required to claim completion.
+5. Stop conditions.
+
+Do not claim completion without evidence. If verification cannot be run, give exact manual verification steps.
 
 ## Session start prompt
 
@@ -239,6 +256,8 @@ Task:
 
 ## Objective
 
+## Definition of Done
+
 ## Files read
 
 ## Files changed
@@ -246,6 +265,8 @@ Task:
 ## Commands run
 
 ## Result
+
+## Verification evidence
 
 ## Risks
 
@@ -277,6 +298,8 @@ Mode:
 ## Files forbidden
 
 ## Known constraints
+
+## Verification contract
 
 ## Commands
 
