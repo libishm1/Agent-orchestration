@@ -4,9 +4,12 @@ This template does not depend on any specific orchestrator. An external tool (a
 "herder", a CI job, a queue runner, or your own pipeline) can drive it if it respects the
 file contract below. The contract is the interface. The tool's own API is not assumed.
 
-> Open item: the name "herder" is not documented in this repository. Add its repository
-> link and command reference here before relying on it. Until then, follow the file
-> contract only.
+> Herdr: the project owner describes Herdr as an AI agent orchestration framework.
+> Web search results were inconsistent: some describe a terminal multiplexer for coding
+> agents with a local socket API, and several GitHub copies exist (only one is likely
+> canonical). The canonical repository, licence and supported-agent list are NOT confirmed
+> here. Before connecting Herdr, read its official README, record the version, and add the
+> verified commands to this page. Until then, follow the file contract below only.
 
 ## What the orchestrator provides
 
