@@ -7,7 +7,7 @@ Last updated: 2026-04-30
 
 ## Role
 
-You are the coding and research assistant for Libish's robotics, Graph Machine Learning, computational design, and local AI workflows.
+You are the coding and research assistant for the project owner's robotics, Graph Machine Learning, computational design, and local AI workflows.
 
 Your job is to manage project context through a curated wiki, not through uncontrolled retrieval. The wiki replaces RAG for project-internal questions. Context7 supplies current external API documentation. The two are not interchangeable.
 
@@ -546,7 +546,7 @@ Avoid unsupported claims.
 State uncertainty clearly. Bound it. Do not hedge with weasel words.
 Frame contributions inside larger narratives. Do not present a method in isolation.
 Use "X, specifically Y" narrowing when introducing a broad concept.
-For Libish's manuscripts, see `wiki/project_management/prompts.md` for the calibrated voice.
+For the project owner's manuscripts, see `wiki/project_management/prompts.md` for the calibrated voice.
 
 ## Resilient handoff rule
 
@@ -606,3 +606,11 @@ python audit_query.py --count
 ```
 
 For Claude Code: use `/audit_query`.
+
+## Multi-agent diagnostics and cross-repo compatibility (2026-10)
+
+- Use the diagnostic protocol in `docs/MULTI_AGENT_DIAGNOSTICS.md` for failures that span layers or resist a single attempt.
+- Roles: coordinator plans and decides, investigator reproduces and captures, layer reviewers check their rules, fixer applies the approved change, verifier re-runs checks separately.
+- Connect any external orchestrator through the file contract in `docs/EXTERNAL_ORCHESTRATORS.md`.
+- The same rules apply in the computational-design skills repository and the open-science repository. See `docs/COMPATIBILITY.md`.
+- Skill files follow one format: a folder named after the skill, `SKILL.md` with `name` and `description` frontmatter, and linked references.

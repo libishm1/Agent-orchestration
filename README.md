@@ -14,6 +14,14 @@ Experimental but usable workflow scaffold.
 
 This is not a production orchestration framework. It is a structured method for making AI coding workflows more reliable across Claude Code, Codex, and local Qwen sessions.
 
+## What changed (2026-10)
+
+- New multi-agent diagnostic protocol: `project_context_template/docs/MULTI_AGENT_DIAGNOSTICS.md`, with a coordinator subagent, an investigator subagent and the `/diagnose` command.
+- Compatibility across three repositories (orchestration, computational-design skills, open-science): `project_context_template/docs/COMPATIBILITY.md`.
+- Connecting an external orchestrator through a file contract: `project_context_template/docs/EXTERNAL_ORCHESTRATORS.md`.
+- Shared skills to load alongside this template: `research-synthesis` (counted literature reviews and gap analysis), `ai-debugging` (C/C++, C#/.NET, RhinoCommon playbooks), and `computational-design`.
+- Personal names and affiliations removed from the public template.
+
 ## Core Idea
 
 Most AI coding failures come from context drift.
@@ -720,7 +728,7 @@ Long-term:
 
 ## License
 
-This project is maintained by Libish Murugesan at Alfaisal University.
+This project is maintained by its repository owner. See the GitHub profile for contact details.
 
 Recommended license for reuse: MIT or Apache-2.0. Check individual subdirectories for specific licenses on robotics, ML, and local AI components.
 

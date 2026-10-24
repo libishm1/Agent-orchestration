@@ -8,7 +8,7 @@ Map of the GraphML pipelines compared in this project: DGL, PyTorch Geometric (P
 
 - The comparison runs three pipelines against the same dataset, the same features (where applicable), the same split, and the same metric.
 - DGL and PyG are both message-passing GNN frameworks. They are not interchangeable but they cover the same conceptual space.
-- DGL has had no major release since late 2024. PyG has a more active 2025–2026 release cadence and is the dominant framework in the AEC GraphML literature for Libish's PRISMA review window.
+- DGL has had no major release since late 2024. PyG has a more active 2025–2026 release cadence and is the dominant framework in the AEC GraphML literature for the PRISMA review window.
 - SVM is the non-graph baseline. It operates on flattened or aggregated features extracted from the same graph.
 - `Adventurous-Systems/topologicpy_MCP` is a candidate MCP wrapper around TopologicPy for AEC spatial modeling, topology queries, adjacency graph creation, and IFC/BREP/OBJ import-export. It is not yet part of the benchmark pipeline.
 - Before using TopologicPy MCP, check the latest TopologicPy docs at https://topologicpy.readthedocs.io/en/latest/topologicpy.html and confirm wrapper compatibility.
