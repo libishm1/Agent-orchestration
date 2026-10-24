@@ -12,6 +12,7 @@ Use Gemini as a long-context assistant for:
 - generating handoffs
 - scanning for contradictions
 - compressing context for Claude Code, Codex, or local Qwen
+- summarising diagnostic evidence files for the coordinator (see `project_context_template/docs/MULTI_AGENT_DIAGNOSTICS.md`)
 
 ## Limits
 

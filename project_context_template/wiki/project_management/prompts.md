@@ -4,9 +4,9 @@
 
 Calibrated prompts and writing-voice rules for this project. The assistant references this page from `AGENTS.md` when drafting or editing manuscripts, READMEs, or formal documents.
 
-## Writing voice (for Libish's documents)
+## Writing voice (for the project owner's documents)
 
-These rules apply to any document written *by the assistant on Libish's behalf*: papers, proposals, READMEs, formal emails, biodatas, statements.
+These rules apply to any document written *by the assistant on the owner's behalf*: papers, proposals, READMEs, formal emails, biodatas, statements.
 
 ### Core rules
 

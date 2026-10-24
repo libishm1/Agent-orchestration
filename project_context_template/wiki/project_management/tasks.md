@@ -8,9 +8,9 @@ Active task list. Done items move to the bottom under "Completed". Date items as
 
 | Added | Task | Owner | Status | Notes |
 |---|---|---|---|---|
-| 2026-04-29 | Populate `wiki/local_ai_workflow/<library>_notes.md` for ROS2, ur_rtde, FastAPI, PyG. | Libish | Not started | Cache from Context7 during normal work. |
-| 2026-04-29 | Verify the actual TCP offset for the lab's RG6 + custom fingertip configuration. | Libish | Not started | Replace the 159 mm placeholder in `pose_frame_rules.md`. |
-| 2026-04-29 | Decide the first ROS2 bridge target message for Grasshopper poses. | Libish | Not started | Options: `PoseStamped`, trajectory action, MoveIt2 goal, or checked custom command. |
+| 2026-04-29 | Populate `wiki/local_ai_workflow/<library>_notes.md` for ROS2, ur_rtde, FastAPI, PyG. | Owner | Not started | Cache from Context7 during normal work. |
+| 2026-04-29 | Verify the actual TCP offset for the lab's RG6 + custom fingertip configuration. | Owner | Not started | Replace the 159 mm placeholder in `pose_frame_rules.md`. |
+| 2026-04-29 | Decide the first ROS2 bridge target message for Grasshopper poses. | Owner | Not started | Options: `PoseStamped`, trajectory action, MoveIt2 goal, or checked custom command. |
 
 ## Backlog
 
