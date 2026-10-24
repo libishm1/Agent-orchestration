@@ -48,6 +48,16 @@ should be able to work in any of them without relearning the rules.
 - When a diagnostic role changes, update `docs/MULTI_AGENT_DIAGNOSTICS.md` here and the
   `ai-debugging` skill in both skill repos.
 
+## Runtimes and hosts
+
+- Herdr (`herdrdev/herdr`, Apache-2.0): a terminal runtime for coding agents, not an
+  orchestration framework. Each pane is one agent. Panes report working, blocked or idle.
+  Agents drive it through a CLI and socket API. Use one task card and one skill path per pane.
+  Coordination logic stays in the task cards and in `EXTERNAL_ORCHESTRATORS.md`.
+  Windows support is a beta. Verify CLI commands against your installed version.
+- Omarchy: an Arch Linux setup with the Hyprland compositor. Skills and this template need
+  no changes. Rhino and Grasshopper steps must run on Windows or macOS, or on a remote host.
+
 ## Known gaps
 
 - The validator in the skills repo checks names and links. It does not check that the
